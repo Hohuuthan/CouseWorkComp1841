@@ -81,7 +81,7 @@ ob_start();
     </p>
 </form>
 
-<!-- Create New Account button (Facebook style) -->
+<!-- Create New Account button -->
 <p style="text-align: center; margin-top: 30px;">
     <a href="register.php" 
        style="background: #00a400; color: white; padding: 12px 40px; 

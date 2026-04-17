@@ -1,5 +1,4 @@
 <?php
-// Hardcode đường dẫn cho admin (không dùng $basePath nữa)
 $basePath = '';
 ?>
 

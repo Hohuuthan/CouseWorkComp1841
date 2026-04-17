@@ -112,13 +112,12 @@ function addcontact($pdo, $content, $user_id = null) {
 
 // ====================== USER MANAGEMENT FUNCTIONS ======================
 
-// Lấy tất cả users
+// Take all User
 function allUsers($pdo) {
     $sql = "SELECT id, username, email, created_at FROM user ORDER BY id DESC";
     return query($pdo, $sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Lấy 1 user theo id
 function getUser($pdo, $id) {
     $sql = "SELECT id, username, email FROM user WHERE id = :id";
     $parameters = [':id' => $id];
@@ -126,7 +125,6 @@ function getUser($pdo, $id) {
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-// Thêm user mới
 function insertUser($pdo, $name, $email, $password) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
@@ -142,7 +140,6 @@ function insertUser($pdo, $name, $email, $password) {
     query($pdo, $sql, $parameters);
 }
 
-// Cập nhật user
 function updateUser($pdo, $id, $name, $email) {
     $sql = "UPDATE user SET username = :username, email = :email WHERE id = :id";
     $parameters = [
@@ -153,14 +150,12 @@ function updateUser($pdo, $id, $name, $email) {
     query($pdo, $sql, $parameters);
 }
 
-// Xóa user
 function deleteUser($pdo, $id) {
     $sql = "DELETE FROM user WHERE id = :id";
     $parameters = [':id' => $id];
     query($pdo, $sql, $parameters);
 }
 
-// Lấy tất cả film
 function allFilms($pdo) {
     $sql = "SELECT id, title, genre, release_year, image, created_at 
             FROM film 
@@ -168,7 +163,6 @@ function allFilms($pdo) {
     return query($pdo, $sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Thêm film mới
 function insertFilm($pdo, $title, $genre = null, $release_year = null, $image = null) {
     $sql = "INSERT INTO film (title, genre, release_year, image, created_at) 
             VALUES (:title, :genre, :release_year, :image, NOW())";
@@ -183,7 +177,6 @@ function insertFilm($pdo, $title, $genre = null, $release_year = null, $image = 
     query($pdo, $sql, $parameters);
 }
 
-// Lấy thông tin 1 film theo id (dùng cho edit)
 function getFilm($pdo, $id) {
     $sql = "SELECT id, title, genre, release_year, image 
             FROM film 
@@ -195,7 +188,6 @@ function getFilm($pdo, $id) {
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-// Cập nhật film
 function updateFilm($pdo, $id, $title, $image = null) {
     if ($image !== null) {
         // Có hình mới → cập nhật cả image
@@ -206,7 +198,7 @@ function updateFilm($pdo, $id, $title, $image = null) {
             ':id'    => $id
         ];
     } else {
-        // Không có hình mới → chỉ cập nhật title
+   
         $sql = "UPDATE film SET title = :title WHERE id = :id";
         $parameters = [
             ':title' => $title,
@@ -216,14 +208,13 @@ function updateFilm($pdo, $id, $title, $image = null) {
     query($pdo, $sql, $parameters);
 }
 
-// Xóa film
+
 function deleteFilm($pdo, $id) {
     $sql = "DELETE FROM film WHERE id = :id";
     $parameters = [':id' => $id];
     query($pdo, $sql, $parameters);
 }
 
-// Xóa contact message
 function deleteContact($pdo, $id) {
     $sql = "DELETE FROM contact WHERE id = :id";
     $parameters = [':id' => $id];

@@ -89,7 +89,7 @@ tr:hover {
     background: #1f1f1f;
 }
 
-/* NÚT EDIT & DELETE - BỎ GẠCH CHÂN */
+/* Button EDIT & DELETE*/
 .btn {
     display: inline-block;
     padding: 10px 22px;
@@ -102,7 +102,7 @@ tr:hover {
     height: 42px;
     line-height: 42px;
     text-align: center;
-    text-decoration: none !important;     /* ← Bỏ gạch chân */
+    text-decoration: none !important;     
 }
 
 .btn-edit { background: #00b300; color: white; }
@@ -115,7 +115,6 @@ td:last-child {
     gap: 8px;
 }
 
-/* Các phần khác */
 img { border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.7); }
 
 input, textarea, select {

@@ -20,7 +20,6 @@
         </p>
     <?php endif; ?>
 
-    <!-- Select film - luôn hiển thị cho mọi người -->
     <p>
         <label for="film_id">Select film:</label><br>
         <select name="film_id" id="film_id" required>

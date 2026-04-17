@@ -3,7 +3,7 @@ include 'includes/DatabaseConnection.php';
 include 'includes/DatabaseFunction.php';
 include 'includes/session.php';
 try {
-    $films = allFilms($pdo);        // hàm sẽ thêm ở bước sau
+    $films = allFilms($pdo);        
     $title = 'Films List';
     
     ob_start();

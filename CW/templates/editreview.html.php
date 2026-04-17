@@ -18,7 +18,6 @@
         <?php endif; ?>
     </div>
 
-    <!-- Thông tin bên phải -->
     <div style="flex: 1;">
         <h3><?= htmlspecialchars($review['film_title'] ?? 'Unknown Film') ?></h3>
         <p style="color: #000; margin: 10px 0;">
