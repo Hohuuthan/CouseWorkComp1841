@@ -1,9 +1,9 @@
 <?php
 include '../includes/DatabaseConnection.php';
 include '../includes/DataBaseFunction.php';
-include '../includes/session.php';           // ← THÊM DÒNG NÀY
+include '../includes/session.php';           
 
-// Chỉ admin mới vào được
+
 if ($_SESSION['role'] !== 'admin') {
     header('Location: ../films.php?error=permission_denied');
     exit;
@@ -11,8 +11,7 @@ if ($_SESSION['role'] !== 'admin') {
 
 if (isset($_POST['name']) && isset($_POST['email'])) {
     try {
-        // Nếu bạn muốn admin nhập password khi tạo user thì giữ nguyên
-        // (hiện tại form chưa có trường password nên sẽ dùng chuỗi rỗng)
+       
         insertUser($pdo, $_POST['name'], $_POST['email'], $_POST['password'] ?? '');
         
         header('Location: users.php');

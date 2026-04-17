@@ -1,13 +1,13 @@
 <?php
 include '../includes/DatabaseConnection.php';
 include '../includes/DatabaseFunction.php';
-include '../includes/session.php';           // ← Quan trọng: thêm dòng này
+include '../includes/session.php';           
 
 if (isset($_POST['username']) && isset($_POST['email'])) {
     try {
         updateUser($pdo, $_POST['id'], $_POST['username'], $_POST['email']);
         
-        header('Location: users.php');     // ← Sửa thành users.php (không có ../)
+        header('Location: users.php');     
         exit;
         
     } catch (PDOException $e) {

@@ -6,7 +6,7 @@ include 'includes/session.php';
 
 if (isset($_POST['content'])) {
     $content = $_POST['content'];
-    $user_id = $_SESSION['user_id'] ?? null;   // Lấy ID người đang đăng nhập
+    $user_id = $_SESSION['user_id'] ?? null;  
 
     addcontact($pdo, $content, $user_id);
 
